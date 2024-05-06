@@ -13,8 +13,14 @@ return new class extends Migration
     {
         Schema::create('builds', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->string('name');
+            $table->decimal('total_cost', 8, 2);
+            // $table->enum('status', ['draft', 'completed']); // Здесь можно добавить свои варианты статусов
             $table->timestamps();
         });
+
     }
 
     /**

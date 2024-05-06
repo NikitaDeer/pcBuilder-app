@@ -44,4 +44,17 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function profile()
+    {
+        return $this->hasOne(Profile::class);
+    }
+
+    /**
+     * Отношение "один ко многим" с моделью Build.
+     */
+    public function builds()
+    {
+        return $this->hasMany(Build::class);
+    }
 }

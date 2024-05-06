@@ -13,8 +13,14 @@ return new class extends Migration
     {
         Schema::create('build_components', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('build_id');
+            $table->foreign('build_id')->references('id')->on('builds')->onDelete('cascade');
+            $table->unsignedBigInteger('component_id');
+            $table->foreign('component_id')->references('id')->on('components')->onDelete('cascade');
+            $table->integer('quantity')->default(1);
             $table->timestamps();
         });
+
     }
 
     /**
