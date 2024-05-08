@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('manufacturer');
             $table->text('specifications')->nullable(); // Характеристики можно хранить в JSON-формате
             $table->decimal('price', 8, 2);
-            // $table->string('image')->nullable(); // Ссылка на изображение или путь к файлу
             $table->text('image')->nullable();
             $table->timestamps();
         });

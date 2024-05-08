@@ -9,6 +9,12 @@ class Build extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'user_id', //привязка к юзеру
+        'name', //наименование
+        'total_cost', //общая стоимость
+    ];
+
     /**
      * Обратное отношение "один ко многим" с моделью User.
      */

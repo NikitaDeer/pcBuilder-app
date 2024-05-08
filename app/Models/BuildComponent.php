@@ -9,6 +9,13 @@ class BuildComponent extends Model
 {
     use HasFactory;
 
+
+    protected $fillable = [
+        'build_id', //привязка к сборке
+        'component_id', //наименование
+        'quantity', //количество
+    ];
+
     /**
      * Обратное отношение "один ко многим" с моделью Build.
      */
